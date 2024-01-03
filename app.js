@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
     // debuging
     console.warn(betNumber)
     // on request to get current bet number then i  send current bet number
-    io.emit("on-get-current-bet", 22.22);
+    io.emit("on-get-current-bet", betNumber);
   })
 
 })
