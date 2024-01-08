@@ -6,5 +6,6 @@ const router=express.Router();
 
 // create routes
 router.post("/gamestart",GameController.setGameIsStart);
+router.post("/plancrash",GameController.setAeroPlanIsCrashed);
 
 module.exports=router;
