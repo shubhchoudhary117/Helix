@@ -18,5 +18,6 @@ router.get("/allplaced-bets",betController.getAllPlacedBets);
 router.get("/myplaced-bets/:userid",betController.onGetMyPlacedBetWinHistory)
 router.get("/currentbet-winers",betController.onGetAllPlacedBetWinHistory);
 router.post("/set-betstatus",betController.onUpdateUserBetStatus)
-router.get("/mybet-status/:userid",betController.onGetUseBetStatus)
+router.get("/mybet-status/:userid",betController.onGetUseBetStatus);
+router.get("/get-userplaced-betsnumber/:userid",betController.onGetUserPlacedBetsNumber)
 module.exports=router

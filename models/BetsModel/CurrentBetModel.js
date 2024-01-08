@@ -13,6 +13,14 @@ const CurrentBetSchema=new mongoose.Schema({
         type:String,
         require:true
     },
+    CurrentFirstBettingAmount:{
+        type:Number,
+        require:true
+    },
+    CurrentSecondBettingAmount:{
+        type:Number,
+        require:true
+    },
     Bet_time:{
         type:Date,
         require:true,
