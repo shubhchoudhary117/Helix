@@ -4,9 +4,10 @@ class GameController{
 
     // set game information
     static setGameIsStart=async(req,res)=>{
-        let {gameisstart}=req.body;
+        let {gameisstart,aeroplancrash}=req.body;
         try{
-          await  GameInfoModel.updateOne({GameType:"Helix"},{GameIsStart:gameisstart},{upsert:true})
+          await  GameInfoModel.updateOne({GameType:"Helix"},{GameIsStart:gameisstart,AeroplanCrash:aeroplancrash},
+          {upsert:true})
           
             res.json({result:true,gameinfoUpdated:true,internalServerError:false})
         }catch(error){

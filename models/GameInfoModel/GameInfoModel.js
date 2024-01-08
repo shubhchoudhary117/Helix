@@ -10,6 +10,11 @@ const GameInfoModelSchema = new mongoose.Schema({
         require: true,
         default: false
     },
+    AeroplanCrash:{
+        type:Boolean,
+        required:true,
+        default:false
+    },
     start_time: {
         type: Date,
         require: true,

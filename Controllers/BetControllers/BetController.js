@@ -6,10 +6,15 @@ const CurrentBetModel = require("../../models/BetsModel/CurrentBetModel.js")
 const DemoUserModel = require("../../models/DemouerModels/DemouserModel.js");
 const CurrentWinBetsModel = require("../../models/BetsModel/CurrentWinBets.js");
 const UserBetStatusModel = require("../../models/BetsModel/UserBetStatus.js")
+const Joi = require("joi")
 class BetController {
 
-
-
+    static betSchema = Joi.object({
+        username: Joi.string().min(3).required(),
+        email: Joi.string().min(4),
+        betnumber: Joi.required(),
+        betamount: Joi.required()
+    })
     // on unity frotend send current bet number
     static onPostCurrentBet = async (req, res) => {
         let { currentbet, userid } = req.body;
@@ -33,14 +38,14 @@ class BetController {
     }
 
     // on get user placed bets number
-    static onGetUserPlacedBetsNumber=async (req,res)=>{
-        try{
-            let {userid}=req.params;
-            let placedBets=await CurrentBetModel.findOne({Email:userid});
-            res.status(200).json({result:true,placedBetsDetails:placedBets,internalServerError:false})
-        }catch(error){
+    static onGetUserPlacedBetsNumber = async (req, res) => {
+        try {
+            let { userid } = req.params;
+            let placedBets = await CurrentBetModel.findOne({ Email: userid });
+            res.status(200).json({ result: true, placedBetsDetails: placedBets, internalServerError: false })
+        } catch (error) {
             console.log(error);
-            res.status(200).json({result:true,placedBetsDetails:placedBets,internalServerError:false})
+            res.status(200).json({ result: true, placedBetsDetails: placedBets, internalServerError: false })
         }
     }
 
@@ -79,43 +84,52 @@ class BetController {
     }
 
 
+    //   save the current placed bet wining history
+    // let placedBet = await UserBetModel.updateOne(
+    //     { Email: email },
+    //     { $addToSet: { Bets: [{ Betnumber: betnumber, BetAmount: betamount }] } });
     // When the user place  the first bet
     static onPlaceFirstBet = async (req, res) => {
         // distructure the request body
         let { username, email, betnumber, betamount } = req.body;
         try {
-            //   save the current placed bet wining history
-            // let placedBet = await UserBetModel.updateOne(
-            //     { Email: email },
-            //     { $addToSet: { Bets: [{ Betnumber: betnumber, BetAmount: betamount }] } });
 
-            // update the current bet model
-            await CurrentBetModel.updateOne({ Email: email },
-                { CurrentFirstBetNumber: betnumber,CurrentFirstBettingAmount:betamount }, { upsert: true })
+            let { error } = this.betSchema.validate({ username, email, betnumber, betamount });
+            if (error) {
+                return res.status(400).json({
+                    success: false, somethingwrong: true, internalServerError: false,
+                    error: error.details[0].message
+                });
+            }
+            else {
+                // update the current bet model
+                await CurrentBetModel.updateOne({ Email: email },
+                    { CurrentFirstBetNumber: betnumber, CurrentFirstBettingAmount: betamount }, { upsert: true })
 
 
-            // update the placed bet history
-            let newWinner = new CurrentWinBetsModel({
-                Username: username,
-                Email: email,
-                Betnumber: betnumber,
-                BetAmount: betamount,
-                BetOutAmount: ""
-            })
-            // save the placed bet history
-            let added = await newWinner.save();
+                // update the placed bet history
+                let newWinner = new CurrentWinBetsModel({
+                    Username: username,
+                    Email: email,
+                    Betnumber: betnumber,
+                    BetAmount: betamount,
+                    BetOutAmount: ""
+                })
+                // save the placed bet history
+                let added = await newWinner.save();
 
-            // update the user balance
-            let demouser = await DemoUserModel.findOne({ Username: "Demouser1" });
-            let updatedBalance = 0;
-            updatedBalance = (parseFloat(demouser.Balance)) - betamount;
-            await DemoUserModel.updateOne({ Username: "Demouser1" }, { Balance: updatedBalance });
-            // update the balance and send the response
-            res.json({ success: true, somethingwrong: false });
+                // update the user balance
+                let demouser = await DemoUserModel.findOne({ Username: "Demouser1" });
+                let updatedBalance = 0;
+                updatedBalance = (parseFloat(demouser.Balance)) - betamount;
+                await DemoUserModel.updateOne({ Username: "Demouser1" }, { Balance: updatedBalance });
+                // update the balance and send the response
+                res.json({ success: true, somethingwrong: false });
+            }
 
         } catch (error) {
             throw error;
-            res.json({ success: false,  somethingwrong: false, internalServerError: true });
+            res.json({ success: false, somethingwrong: false, internalServerError: true });
         }
     }
 
@@ -135,7 +149,7 @@ class BetController {
 
             // update the current bet
             await CurrentBetModel.updateOne({ Email: email },
-                { CurrentSecondBetNumber: betnumber,CurrentSecondBettingAmount:betamount }, { upsert: true })
+                { CurrentSecondBetNumber: betnumber, CurrentSecondBettingAmount: betamount }, { upsert: true })
 
 
             // update the placed bet history
@@ -155,7 +169,7 @@ class BetController {
             updatedBalance = (parseFloat(demouser?.Balance)) - betamount;
             await DemoUserModel.updateOne({ Username: "Demouser1" }, { Balance: updatedBalance });
 
-            res.json({ success: true,  somethingwrong: false });
+            res.json({ success: true, somethingwrong: false });
 
         } catch (error) {
             throw error;
@@ -249,7 +263,7 @@ class BetController {
                             BetHistory:
                                 [{
                                     Betnumber: currentBetModel.CurrentSecondBetNumber,
-                                    BetAmount: currentBetModel.CurrentSecondBettingAmount, 
+                                    BetAmount: currentBetModel.CurrentSecondBettingAmount,
                                     WiningStatus: winingstatus,
                                     LossAmount: lossamount, WinAmount: winamount
                                 }]
