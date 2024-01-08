@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const GameInfoModelSchema = new mongoose.Schema({
-
+    GameType:{
+        type:String,
+        default:"Helix"
+    },
     GameIsStart: {
         type: Boolean,
         require: true,

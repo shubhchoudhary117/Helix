@@ -8,6 +8,8 @@ const CurrentWinBetsModel = require("../../models/BetsModel/CurrentWinBets.js");
 const UserBetStatusModel = require("../../models/BetsModel/UserBetStatus.js")
 class BetController {
 
+
+
     // on unity frotend send current bet number
     static onPostCurrentBet = async (req, res) => {
         let { currentbet, userid } = req.body;
