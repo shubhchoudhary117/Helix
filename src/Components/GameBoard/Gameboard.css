@@ -1,0 +1,2908 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --dark-black: #000000;
+    --white-color: #fff;
+    --monstrate-font-500: 'Montserrat', sans-serif;
+    --history-btn-color: #2C2D30;
+    --green-color: #28A909;
+    --auto-btn-color: red;
+    --bet-cancle-btn-color: red;
+    --controllers-bg-color: #1B1C1D;
+    --playbet-btn-border: #B2F2A3;
+    --robot-font: 'Roboto', sans-serif;
+    --disabled-placebetcounte: #75767b6b;
+    --disabled-white: #ffffffe0;
+    --poppins-font: 'Poppins', sans-serif;
+    --disabled-bg-color: #1b1c1dbb;
+}
+
+.gameboard-section {
+    width: 100%;
+
+}
+
+.gameboard-section .Toaster {
+    border: 1px solid #DF0000;
+    padding: 16px;
+    color: var(--white-color);
+    background-color: var(--controllers-bg-color);
+    text-transform: capitalize;
+    font-family: var(--monstrate-font-500);
+}
+
+.gameboard-section .gameboard-container {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.gameboard-section .gameboard-container .game-section {
+    width: 70%;
+    height: 70vh;
+    max-width: 73%;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-history-header {
+    width: 100%;
+    display: flex;
+    height: 4vh;
+    margin-bottom: 4px;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-history-header .histories {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.gameboard-section .gameboard-container .game-section .game-history-header .histories::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 8px !important;
+}
+
+.gameboard-section .gameboard-container .game-section .game-history-header .histories::-webkit-scrollbar-thumb {
+    background-color: #2b2c2e;
+    border-radius: 20px;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-history-header .histories .history {
+    color: #F8C961;
+    padding: 0px 10px;
+    font-size: 0.8rem;
+    font-family: var(--monstrate-font-500);
+}
+
+.gameboard-section .gameboard-container .game-section .game-history-header .history-btn {
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.gameboard-section .gameboard-container .game-section .game-history-header .history-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Response breakpoint */
+@media screen and (max-width:820px) {
+
+    .gameboard-section {
+        width: 100%;
+    }
+
+    .gameboard-section .gameboard-container {
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section {
+        width: 95%;
+        max-width: 98%;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-history-header {
+        width: 100%;
+        display: flex;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-history-header .histories {
+        max-width: 90%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+
+
+    .gameboard-section .gameboard-container .game-section .game-history-header .histories .history {
+        color: #F8C961;
+        padding: 0px 7px;
+        font-size: 0.8rem;
+        font-family: var(--monstrate-font-500);
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-history-header .history-btn {
+        width: 50px;
+        height: 20px;
+        cursor: pointer;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-history-header .history-btn img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+/* unity game box designe */
+.unity-game-box {
+    width: 100%;
+    height: 55vh;
+    background-color: red;
+    z-index: 111;
+
+}
+
+.unity-game-box .canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.unity-game-box .canvas .unity {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+}
+
+/* Game controllers  */
+@media screen and (min-width:385px) and (max-width:768px)  {
+    .gameboard-section .gameboard-container .game-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* unity game box designe */
+    .unity-game-box {
+        width: 100%;
+        height: 33vh;
+        margin: auto;
+
+    }
+
+    .unity-game-box .canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    .unity-game-box .canvas .unity {
+        width: 100%;
+        height: 100%;
+        background-color: var(--white-color);
+    }
+    /* Game controllers  */
+}
+
+/* Game controllers  */
+
+@media screen and (max-width:380px) {
+    .gameboard-section .gameboard-container .game-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* unity game box designe */
+    .unity-game-box {
+        width: 100%;
+        height: 23vh;
+        margin: auto;
+
+    }
+
+    .unity-game-box .canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    .unity-game-box .canvas .unity {
+        width: 100%;
+        height: 100%;
+        background-color: var(--white-color);
+    }
+
+    /* Game controllers  */
+}
+
+/* Game controllers  */
+
+@media screen and (min-width:1380px) {
+   
+    /* unity game box designe */
+    .unity-game-box {
+        height: 58vh;
+    }
+
+    .unity-game-box .canvas {
+        width: 100%;
+        height: 58vh;
+    }
+
+    .unity-game-box .canvas .unity {
+        width: 100%;
+        height: 58vh;
+        background-color: var(--white-color);
+    }
+
+    /* Game controllers  */
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section {
+    width: 100%;
+    height: 23vh;
+    margin-top: 10px;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container {
+    width: 90%;
+    height: 23vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+@media screen and (min-width:1300px){
+    .gameboard-section .gameboard-container .game-section .game-controllers-section {
+        width: 100%;
+        height: 23vh;
+        margin-top: 10px;
+    
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container {
+        width: 95%;
+        height: 23vh;
+    }
+}
+
+/* end of new code */
+@media screen and (min-width:385px) and (max-width:768px)  {
+    .gameboard-section .gameboard-container .game-section .game-controllers-section {
+        width: 100%;
+        height: 23vh;
+        margin-top: 93px;
+    }
+   
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container {
+        width: 100%;
+        height: 23vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+/* end of new code */
+@media screen and (max-width:380px) {
+    .gameboard-section .gameboard-container .game-section .game-controllers-section {
+        width: 100%;
+        height: 23vh;
+        margin-top: 95px;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container {
+        width: 100%;
+        height: 23vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .left-controllers {
+    width: 43%;
+    height: 24vh;
+    margin: auto;
+    background-color: var(--controllers-bg-color);
+    border-radius: 12px;
+    padding: 10px;
+    position: relative;
+}
+
+/* new code of autobet controllers and place bet */
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .disabled-layer{
+    width: 100%;
+    height: 100%;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet {
+    width: 50%;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect {
+    width: 50%;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* .gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+ .disabled-layer {
+    width: 100%;
+    height: 6vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+} */
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header .speed {
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    padding: 5px;
+    background-color: var(--dark-black);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header .autobet-btn {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    display: flex;
+    align-items: center;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+
+/* 
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-bet .autobet-controller .disabled-layer {
+    width: 100%;
+    height: 6vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+} */
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,.increase {
+    font-size: 1.2rem;
+    color: var(--white-color);
+    font-weight: 400;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase.disabled{
+    color: var(--disabled-white);
+ }
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value input{
+    height: 50%;
+    width: 100px;
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    outline: none;
+    z-index: 1111;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value input::-webkit-inner-spin-button{
+    display: none;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: right;
+    position: relative;
+}
+
+
+/* .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .disabled-layer {
+    width: 100%;
+    height: 6vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+} */
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .autocollect-btn {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    display: flex;
+    align-items: center;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller {
+    width: 100%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+/* .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller .disabled-layer {
+    width: 100%;
+    height: 6vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+} */
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .decrease, .increase {
+    font-size: 1.2rem;
+    color: var(--white-color);
+    font-weight: 400;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .increase.disabled{
+    color: var(--disabled-white);
+ }
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .autobet-values-place-bet-btn {
+    width: 100%;
+    display: flex;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    text-transform: capitalize;
+    gap: 5%;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    margin-top: 3px;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .autobet-values-place-bet-btn .autobet-betvalues .disabled-layer {
+    width: 100%;
+    height: 13vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .autobet-values-place-bet-btn .autobet-betvalues .betvalue {
+    height: 6vh;
+    font-size: 0.9rem;
+    font-family: var(--monstrate-font-500);
+    color: #D6D6D6;
+    background-color: var(--dark-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border: none;
+    border: 1px solid var(--controllers-bg-color);
+    cursor: pointer;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .autobet-values-place-bet-btn .placebet-btn {
+    width: 50%;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .autobet-values-place-bet-btn .placebet-btn button {
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    height: 12vh;
+    border-radius: 5px;
+    background-color: var(--green-color);
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+    line-height: 1.3rem;
+    font-size: 1rem;
+    font-weight: 520;
+    cursor: pointer;
+    margin-top: 5px;
+    text-transform: capitalize;
+    border: none;
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn 
+ .bet-accepted-btn {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'CrystalUni-Bold';
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn 
+ .collect-amount-btn .collect-value {
+    font-size: 1.2rem;
+    font-family: var(--robot-font);
+    font-weight: 600;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn .collect-amount-btn .collect-text {
+    font-size: 0.8rem;
+    font-family: var(--poppins-font);
+    font-weight: 600;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn .nextround-btn {
+    background-color: var(--green-color);
+    color: var(--white-color);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn button
+  .for-nextround-text {
+    font-size: 0.8rem;
+    font-family: var(--poppins-font);
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn 
+ .nextround-cancle-btn {
+    background-color: red;
+}
+
+/* end of new code */
+@media screen and (min-width:385px) and (max-width:768px)  {
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers {
+        width: 95%;
+        height: 24vh;
+        background-color: var(--controllers-bg-color);
+        border-radius: 12px;
+        padding: 10px;
+        position: relative;
+        margin-left: 0px;
+    }
+
+    /* new code of autobet controllers and place bet */
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .disabled-layer{
+        width: 100%;
+        height: 100%;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet {
+        width: 50%;
+        position: relative;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .disabled-layer {
+        width: 100%;
+        height: 100%;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1111;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect {
+        width: 50%;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header {
+        width: 100%;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header .speed {
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        padding: 5px;
+        background-color: var(--dark-black);
+        box-sizing: border-box;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+    .autobet-btn {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        display: flex;
+        align-items: center;
+
+    }
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,.increase {
+    font-size: 1.2rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect 
+    .autocollect-btn-header {
+        width: 100%;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: right;
+
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .autocollect-btn {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        display: flex;
+        align-items: center;
+
+    }
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .decrease, .increase {
+    font-size: 1.2rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn {
+        width: 100%;
+        display: flex;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        text-transform: capitalize;
+        gap: 5%;
+        margin: auto;
+        margin-top: 3px;
+        position: relative;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .autobet-betvalues
+      .betvalue {
+        height: 4.5vh;
+        font-size: 0.9rem;
+        font-family: var(--monstrate-font-500);
+        color: #D6D6D6;
+        background-color: var(--dark-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn {
+        width: 50%;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn button {
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: var(--green-color);
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+        line-height: 1.3rem;
+        font-size: 1rem;
+        font-weight: 520;
+        cursor: pointer;
+        margin-top: 5px;
+        text-transform: capitalize;
+        border: none;
+    }
+/* 
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+    .disabled-layer {
+        width: 100%;
+        height: 4.5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-bet .autobet-controller .disabled-layer {
+        width: 100%;
+        height: 6vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect 
+     .autocollect-btn-header .disabled-layer {
+        width: 100%;
+        height: 4.5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect
+     .autocollect-controller .disabled-layer {
+        width: 100%;
+        height: 4vh;
+        background-color:var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+ */
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .autobet-betvalues 
+     .disabled-layer {
+        width: 100%;
+        height: 10vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+
+}
+
+/* end of new code */
+@media screen and (max-width:380px) {
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers {
+        width: 95%;
+        height: 23vh;
+        background-color: var(--controllers-bg-color);
+        border-radius: 12px;
+        padding: 10px;
+        padding-top: 7px;
+        position: relative;
+        margin-left: 0px;
+    }
+
+    /* new code of autobet controllers and place bet */
+
+
+  
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers{
+        width: 100%;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet{
+        width: 100%;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header {
+        width: 100%;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+     .autobet-btn{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    
+    }
+    
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+     .speed {
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        font-size: 0.7rem;
+        text-transform: capitalize;
+        padding: 5px;
+        background-color: var(--dark-black);
+        box-sizing: border-box;
+    
+
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header
+      .autobet-btn .title{
+        width: 50%;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header
+     .autobet-btn .switch{
+        width: 50%;
+    }
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+   
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,.increase {
+    font-size: 1rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value {
+    font-size: 0.9rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+
+
+
+/* ;;;;;;;; */
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect{
+    width: 100%;
+
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .autocollect-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .autocollect-btn .title{
+    width: 60%;
+
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .autocollect-btn  .switch{
+    width: 40%;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header 
+.autocollect-btn {
+    width: 100%;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+  
+  
+}
+
+/* ============== */
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller {
+    width: 100%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .decrease, .increase {
+    font-size: 1.2rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.left-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn {
+        width: 100%;
+        display: flex;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        text-transform: capitalize;
+        gap: 5%;
+        margin: auto;
+        margin-top: 3px;
+        position: relative;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .autobet-betvalues
+      .betvalue {
+        height: 4.5vh;
+        font-size: 0.8rem;
+        font-family: var(--monstrate-font-500);
+        color: #D6D6D6;
+        background-color: var(--dark-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn {
+        width: 50%;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn button {
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: var(--green-color);
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+        line-height: 1.3rem;
+        font-size: 1rem;
+        font-weight: 520;
+        cursor: pointer;
+        margin-top: 5px;
+        text-transform: capitalize;
+        border: none;
+    }
+
+    /* .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+    .disabled-layer {
+        width: 100%;
+        height: 5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-bet .autobet-controller .disabled-layer {
+        width: 100%;
+        height: 6vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect 
+     .autocollect-btn-header .disabled-layer {
+        width: 100%;
+        height: 5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect
+     .autocollect-controller .disabled-layer {
+        width: 100%;
+        height: 4.7vh;
+        background-color:var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+*/
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .autobet-betvalues
+     .disabled-layer {
+        width: 100%;
+        height: 10vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    } 
+
+
+}
+
+
+@media screen and (min-width:1300px){
+    .gameboard-section .gameboard-container .game-section .game-controllers-section {
+        width: 100%;
+        height: 23vh;
+        margin-top: 10px;
+    
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container {
+        width: 95%;
+        height: 23vh;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers {
+        width: 47%;
+        height: 23vh;
+        padding: 8px;
+    }
+    
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header .speed {
+        font-size: 1.1rem;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-bet .autobet-btn-header .autobet-btn {
+        font-size: 1rem;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-bet .autobet-controller {
+        width: 95%;
+        height: 5vh;
+        max-height: 8vh;
+    
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,.increase {
+        font-size: 1.2rem;
+        color: var(--white-color);
+        font-weight: 400;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+        color: var(--disabled-white);
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+    .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase.disabled {
+       color: var(--disabled-white);
+   }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value {
+        font-size: 1rem;
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header {
+        width: 100%;
+       
+    }
+    
+    
+    /* .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .disabled-layer {
+        width: 100%;
+        height: 7vh;
+    } */
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .autocollect-btn {
+        font-size: 1rem;
+    }
+    
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-collect .autocollect-controller {
+        width: 95%;
+        height: 5vh;
+        max-height: 8vh;
+    
+    }
+    
+    /* .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .disabled-layer {
+        width: 100%;
+        height: 7vh;
+    } */
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller
+     .decrease, .increase {
+        font-size: 1.2rem;
+        
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+        color: var(--disabled-white);
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .disabled {
+        color: var(--disabled-white);
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+        font-size: 1.2rem;
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+    }
+    
+
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+        width: 50%;
+        margin-top: 6px;
+      
+    }
+/*     
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .autobet-values-place-bet-btn .autobet-betvalues .disabled-layer {
+        width: 100%;
+        height: 13vh;
+    }
+     */
+
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+     .left-controllers .autobet-values-place-bet-btn .placebet-btn button {
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+        height: 12vh;
+        font-size: 1.4rem;
+        margin-top: 6px;
+    }
+    
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn 
+     .bet-accepted-btn {
+        font-size: 1.4rem;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn 
+     .collect-amount-btn .collect-value {
+        font-size: 1.4rem;
+
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn .collect-amount-btn .collect-text {
+        font-size: 1rem;
+        font-family: var(--poppins-font);
+        font-weight: 600;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section 
+    .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn .nextround-btn {
+        background-color: var(--green-color);
+        color: var(--white-color);
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .left-controllers .autobet-values-place-bet-btn .placebet-btn button
+      .for-nextround-text {
+        font-size:1rem;
+        font-family: var(--poppins-font);
+        color: var(--disabled-white);
+    }
+    
+  
+}    
+
+
+
+/* Right controllers */
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers {
+    width: 43%;
+    height: 24vh;
+    margin: auto;
+    background-color: var(--controllers-bg-color);
+    border-radius: 12px;
+    padding: 10px;
+    position: relative;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .right-controllers .play-bet-controllers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .right-controllers .play-bet-controllers .disabled-layer{
+    width: 100%;
+    height: 100%;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet {
+    width: 50%;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect {
+    width: 50%;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-bet .autobet-btn-header {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+/* .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .disabled-layer {
+    width: 100%;
+    height: 7vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+
+} */
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header .speed {
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    padding: 5px;
+    background-color: var(--dark-black);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+.autobet-btn {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    display: flex;
+    align-items: center;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-bet .autobet-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+/* 
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet
+ .autobet-controller .disabled-layer {
+    width: 100%;
+    height: 6vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--disabled-bg-color);
+
+
+} */
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,
+.increase {
+    font-size: 1.2rem;
+    color: var(--white-color);
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-bet .autobet-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .increase {
+    font-size: 1.5rem;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value input{
+    height: 50%;
+    width: 100px;
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    outline: none;
+    z-index: 1111;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value input::-webkit-inner-spin-button{
+    display: none;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+ .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect 
+ .autocollect-btn-header {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: right;
+
+
+}
+
+/* .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-bet .autobet-controller .disabled-layer {
+    width: 100%;
+    height: 6vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+
+} */
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .autocollect-btn {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    display: flex;
+    align-items: center;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-collect .autocollect-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+    
+
+}
+/* .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .disabled-layer {
+    width: 100%;
+    height: 6vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--disabled-bg-color);
+    z-index: 111;
+} */
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .decrease, .increase {
+    font-size: 1.2rem;
+    color: var(--white-color);
+    font-weight: 400;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .autobet-values-place-bet-btn {
+    width: 100%;
+    display: flex;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    text-transform: capitalize;
+    gap: 5%;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    margin-top: 3px;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .autobet-values-place-bet-btn .autobet-betvalues .disabled-layer {
+    width: 100%;
+    height: 13vh;
+    background-color: var(--disabled-bg-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 111;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .autobet-values-place-bet-btn .autobet-betvalues .betvalue {
+    height: 6vh;
+    font-size: 0.9rem;
+    font-family: var(--monstrate-font-500);
+    color: #D6D6D6;
+    background-color: var(--dark-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border: 1px solid var(--controllers-bg-color);
+    cursor: pointer;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+.right-controllers .autobet-values-place-bet-btn .placebet-btn {
+    width: 50%;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+ .right-controllers .autobet-values-place-bet-btn .placebet-btn button {
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    height: 12vh;
+    border-radius: 5px;
+    background-color: var(--green-color);
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+    line-height: 1.3rem;
+    font-size: 1rem;
+    font-weight: 520;
+    cursor: pointer;
+    margin-top: 5px;
+    text-transform: capitalize;
+    border: none;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section 
+.gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn
+ .nextround-cancle-btn {
+    background-color: red;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn .bet-accepted-btn {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'CrystalUni-Bold';
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn .collect-amount-btn .collect-value {
+    font-size: 1.2rem;
+    font-family: var(--robot-font);
+    font-weight: 600;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn .collect-amount-btn .collect-text {
+    font-size: 0.8rem;
+    font-family: var(--poppins-font);
+    font-weight: 600;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn .nextround-btn {
+    background-color: var(--green-color);
+    color: var(--white-color);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn button .for-nextround-text {
+    font-size: 0.8rem;
+    font-family: var(--poppins-font);
+    color: var(--disabled-white);
+}
+
+/* end of new code */
+@media screen and (min-width:385px) and (max-width:768px)  {
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers {
+        width: 95%;
+        height: 24vh;
+        background-color: var(--controllers-bg-color);
+        border-radius: 12px;
+        padding: 10px;
+        position: relative;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    /* new code of autobet controllers and place bet */
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet {
+        width: 50%;
+        position: relative;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .disabled-layer {
+        width: 100%;
+        height: 100%;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1111;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect {
+        width: 50%;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header {
+        width: 100%;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header .speed {
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        padding: 5px;
+        background-color: var(--dark-black);
+        box-sizing: border-box;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+    .autobet-btn {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        display: flex;
+        align-items: center;
+
+    }
+
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,.increase {
+    font-size: 1.2rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller
+      .increase.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller
+      .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+.gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect 
+    .autocollect-btn-header {
+        width: 100%;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: right;
+
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .autocollect-btn {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        display: flex;
+        align-items: center;
+
+    }
+
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .decrease, .increase {
+    font-size: 1.2rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect 
+     .autocollect-controller .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+.gamecontrollers-container .right-controllers .autobet-values-place-bet-btn {
+        width: 100%;
+        display: flex;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        text-transform: capitalize;
+        gap: 5%;
+        margin: auto;
+        margin-top: 3px;
+        position: relative;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues
+      .betvalue {
+        height: 4.5vh;
+        font-size: 0.9rem;
+        font-family: var(--monstrate-font-500);
+        color: #D6D6D6;
+        background-color: var(--dark-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn {
+        width: 50%;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn button {
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: var(--green-color);
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+        line-height: 1.3rem;
+        font-size: 1rem;
+        font-weight: 520;
+        cursor: pointer;
+        margin-top: 5px;
+        text-transform: capitalize;
+        border: none;
+    }
+/* 
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+    .disabled-layer {
+        width: 100%;
+        height: 4.5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller
+     .disabled-layer {
+        width: 100%;
+        height: 6vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect 
+     .autocollect-btn-header .disabled-layer {
+        width: 100%;
+        height: 4.5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect
+     .autocollect-controller .disabled-layer {
+        width: 100%;
+        height: 4vh;
+        background-color:var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+*/
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues .disabled-layer {
+        width: 100%;
+        height: 10vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    } 
+
+}
+
+/* end of new code */
+@media screen and (max-width:380px) {
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers {
+        width: 95%;
+        height: 23vh;
+        background-color: var(--controllers-bg-color);
+        border-radius: 12px;
+        padding: 10px;
+        padding-top: 7px;
+        position: relative;
+        margin-left: 0px;
+        margin-top: 10px;
+   
+    }
+
+    /* new code of autobet controllers and place bet */
+
+
+  
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers{
+        width: 100%;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet{
+        width: 100%;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header {
+        width: 100%;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+     .autobet-btn{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    
+    }
+    
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+     .speed {
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        font-size: 0.7rem;
+        text-transform: capitalize;
+        padding: 5px;
+        background-color: var(--dark-black);
+        box-sizing: border-box;
+    
+
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header
+      .autobet-btn .title{
+        width: 50%;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header
+     .autobet-btn .switch{
+        width: 50%;
+    }
+
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller {
+    width: 95%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+   
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,.increase {
+    font-size: 1rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .increase {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value {
+    font-size: 0.9rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+
+
+
+/* ;;;;;;;; */
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect{
+    width: 100%;
+
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .autocollect-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .autocollect-btn .title{
+    width: 60%;
+
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .autocollect-btn  .switch{
+    width: 40%;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-btn-header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-btn-header 
+.autocollect-btn {
+    width: 100%;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+  
+  
+}
+
+/* ============== */
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller {
+    width: 100%;
+    max-height: 30px;
+    display: flex;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 10px;
+
+}
+
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller
+ .decrease, .increase {
+    font-size: 1.2rem;
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+    color: var(--disabled-white);
+}
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase.disabled {
+    color: var(--disabled-white);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+    font-size: 1rem;
+    font-family: var(--monstrate-font-500);
+    color: var(--white-color);
+}
+
+.gameboard-section .gameboard-container .game-section .game-controllers-section
+.gamecontrollers-container .right-controllers .autobet-values-place-bet-btn {
+        width: 100%;
+        display: flex;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        text-transform: capitalize;
+        gap: 5%;
+        margin: auto;
+        margin-top: 3px;
+        position: relative;
+
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues
+      .betvalue {
+        height: 4.5vh;
+        font-size: 0.8rem;
+        font-family: var(--monstrate-font-500);
+        color: #D6D6D6;
+        background-color: var(--dark-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn {
+        width: 50%;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn button {
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+        height: 10vh;
+        border-radius: 5px;
+        background-color: var(--green-color);
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+        line-height: 1.3rem;
+        font-size: 1rem;
+        font-weight: 520;
+        cursor: pointer;
+        margin-top: 5px;
+        text-transform: capitalize;
+        border: none;
+    }
+
+    /* .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header 
+    .disabled-layer {
+        width: 100%;
+        height: 5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .disabled-layer {
+        width: 100%;
+        height: 6vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect 
+     .autocollect-btn-header .disabled-layer {
+        width: 100%;
+        height: 5vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect
+     .autocollect-controller .disabled-layer {
+        width: 100%;
+        height: 4.7vh;
+        background-color:var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    }
+*/
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues .disabled-layer {
+        width: 100%;
+        height: 10vh;
+        background-color: var(--disabled-bg-color);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 111;
+    } 
+
+
+}
+
+
+@media screen and (min-width:1300px){
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers {
+        width: 47%;
+        height: 23vh;
+        padding: 8px;
+    }
+    
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header .speed {
+        font-size: 1.1rem;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-btn-header .autobet-btn {
+        font-size: 1rem;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller {
+        width: 95%;
+        height: 5vh;
+        max-height: 8vh;
+    
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease,.increase {
+        font-size: 1.2rem;
+        color: var(--white-color);
+        font-weight: 400;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .decrease.disabled {
+        color: var(--disabled-white);
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container
+    .left-controllers .play-bet-controllers .auto-bet .autobet-controller .increase.disabled {
+       color: var(--disabled-white);
+   }
+   .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .increase {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-bet .autobet-controller .bet-value {
+        font-size: 1rem;
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-btn-header {
+        width: 100%;
+       
+    }
+    
+    
+    /* .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect 
+    .autocollect-btn-header .disabled-layer {
+        width: 100%;
+        height: 7vh;
+    }
+     */
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-btn-header .autocollect-btn {
+        font-size: 1rem;
+    }
+    
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect 
+     .autocollect-controller {
+        width: 95%;
+        height: 5vh;
+        max-height: 8vh;
+    
+    }
+    
+    /* .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect
+     .autocollect-controller .disabled-layer {
+        width: 100%;
+        height: 7vh;
+    } */
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller
+     .decrease, .increase {
+        font-size: 1.2rem;
+        
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .increase {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section .gamecontrollers-container 
+    .left-controllers .play-bet-controllers .auto-collect .autocollect-controller .decrease.disabled {
+        color: var(--disabled-white);
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .disabled {
+        color: var(--disabled-white);
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .play-bet-controllers .auto-collect .autocollect-controller .bet-value {
+        font-size: 1.2rem;
+        font-family: var(--monstrate-font-500);
+        color: var(--white-color);
+    }
+    
+
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues {
+        width: 50%;
+        margin-top: 6px;
+      
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .autobet-betvalues .disabled-layer {
+        width: 100%;
+        height: 13vh;
+    }
+    
+
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn button {
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+        height: 12vh;
+        font-size: 1.4rem;
+        margin-top: 6px;
+    }
+    
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn 
+     .bet-accepted-btn {
+        font-size: 1.4rem;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn 
+     .collect-amount-btn .collect-value {
+        font-size: 1.4rem;
+
+    }
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn .collect-amount-btn .collect-text {
+        font-size: 1rem;
+        font-family: var(--poppins-font);
+        font-weight: 600;
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+    .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn .nextround-btn {
+        background-color: var(--green-color);
+        color: var(--white-color);
+    }
+    
+    .gameboard-section .gameboard-container .game-section .game-controllers-section
+     .gamecontrollers-container .right-controllers .autobet-values-place-bet-btn .placebet-btn button
+      .for-nextround-text {
+        font-size:1rem;
+        font-family: var(--poppins-font);
+        color: var(--disabled-white);
+    }
+    
+  
+}    
+
+
+/* bets details section designe */
+.gamebets-section {
+    width: 30%;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+
+.gamebets-section .gamebets-tabs {
+    display: flex;
+    align-items: center;
+}
+
+.gamebets-section .gamebets-tabs .active-tab {
+    color: var(--white-color);
+    background-color: var(--auto-btn-color);
+
+}
+
+.gamebets-section .gamebets-tabs button {
+    padding: 4px 26px 4px 26px;
+    margin: auto;
+    border-radius: 20px;
+    background-color: var(--history-btn-color);
+    color: var(--white-color);
+    border: none;
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: ease all 0.5s;
+}
+
+.gamebets-section .gamebets-details {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+
+.gamebets-section .gamebets-details .bets-loader {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%)
+}
+
+.gamebets-section .gamebets-details .details-headings {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.gamebets-section .gamebets-details .details-headings div {
+    color: var(--white-color);
+}
+
+
+/* Responsive view port for the mobiles and ipad imin  */
+@media screen and (max-width:380px)  {
+
+  
+    /* bets details section designe */
+    .gamebets-section {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 135px;
+    }
+   
+    
+    .gamebets-section .gamebets-tabs button {
+        padding: 4px 26px 4px 26px;
+        margin: auto;
+        border-radius: 20px;
+        background-color: var(--history-btn-color);
+        color: var(--white-color);
+        border: none;
+        font-family: var(--monstrate-font-500);
+        text-transform: capitalize;
+        font-size: 0.7rem;
+        cursor: pointer;
+        transition: ease all 0.5s;
+    }
+    
+    .gamebets-section .gamebets-details {
+        width: 100%;
+        height: 80vh;
+        position: relative;
+    }
+    
+    .gamebets-section .gamebets-details .bets-loader {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -45%)
+    }
+    
+    .gamebets-section .gamebets-details .details-headings {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+    
+   
+    
+    }
+    
+    /* Media query for extra large devices */
+    
+/* Responsive view port for the mobiles and ipad imin  */
+@media screen and (min-width:385px) and (max-width:768px) {
+
+  
+/* bets details section designe */
+.gamebets-section {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 160px;
+}
+
+
+.gamebets-section .gamebets-tabs {
+    display: flex;
+    align-items: center;
+}
+
+.gamebets-section .gamebets-tabs .active-tab {
+    color: var(--white-color);
+    background-color: var(--auto-btn-color);
+
+}
+
+.gamebets-section .gamebets-tabs button {
+    padding: 4px 26px 4px 26px;
+    margin: auto;
+    border-radius: 20px;
+    background-color: var(--history-btn-color);
+    color: var(--white-color);
+    border: none;
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: ease all 0.5s;
+}
+
+
+.gamebets-section .gamebets-details .details-headings {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+}
+
+/* Media query for extra large devices */
+
+   
+/* Responsive view port for the mobiles and ipad imin  */
+@media screen and (min-width:388px) and (max-width:398px) {
+
+  
+    /* bets details section designe */
+    .gamebets-section {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 205px;
+    }
+    
+    
+    .gamebets-section .gamebets-tabs {
+        display: flex;
+        align-items: center;
+    }
+    
+    .gamebets-section .gamebets-tabs .active-tab {
+        color: var(--white-color);
+        background-color: var(--auto-btn-color);
+    
+    }
+    
+    .gamebets-section .gamebets-tabs button {
+        padding: 4px 26px 4px 26px;
+        margin: auto;
+        border-radius: 20px;
+        background-color: var(--history-btn-color);
+        color: var(--white-color);
+        border: none;
+        font-family: var(--monstrate-font-500);
+        text-transform: capitalize;
+        font-size: 0.7rem;
+        cursor: pointer;
+        transition: ease all 0.5s;
+    }
+    
+    
+    .gamebets-section .gamebets-details .details-headings {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+    
+    
+    
+    }
+    
+    /* Media query for extra large devices */
+    

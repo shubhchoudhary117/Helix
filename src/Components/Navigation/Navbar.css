@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+:root {
+    --dark-black: #000000;
+    --white-color: #fff;
+    --monstrate-font-500: 'Montserrat', sans-serif;
+    --menus-card-bg-color:#1B1C1D;
+    --menu-profile-bg:red;
+}
+
+header {
+    width: 100%;
+    height: 10dvh;
+    background-color: #000000;
+   
+
+}
+
+header nav {
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    background-color: var(--dark-black);
+    padding-left: 0px;
+   
+   
+}
+
+header nav .logo {
+    width: 80px;
+    height: 40px;
+    
+}
+
+header nav .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    padding: 0px 20px;
+    cursor: pointer;
+}
+
+header nav ul .user-profile {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul .user-profile .username {
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+header nav ul .user-profile i {
+    font-size: 20px;
+    padding: 1px;
+    color: var(--white-color);
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header nav ul .user-balance {
+    display: block;
+    margin-top: 10px;
+}
+
+header nav ul .user-balance .balance,
+.balance-value {
+    color: var(--white-color);
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+header nav ul .user-balance i {
+    color: var(--white-color);
+}
+header nav ul .user-wallet{
+    display: flex;
+    align-items: center;
+}
+header nav ul .user-wallet i {
+    color: var(--white-color);
+    font-size: 30px;
+}
+header nav ul .menu-icon{
+    display: flex;
+    align-items: center;
+}
+header nav ul .menu-icon i {
+    font-size: 25px;
+    color: var(--white-color);
+    
+}
+
+header nav .menus-card{
+    width: 320px;
+    height: 400px;
+    position: absolute;
+    padding: 10px;
+    top: 4%;
+    right: 30px;
+    background-color: var(--menus-card-bg-color);
+    border-radius: 20px;
+    z-index: 111;
+    transition: ease all 0.5s;
+}
+header nav #nonactive-menus{
+  display: none;
+    z-index: 0;
+}
+header nav #active-menus{
+   display: block;
+    z-index: 1000;
+}
+header nav .menus-card .menus-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav .menus-card .menus-header .profile{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: var(--menu-profile-bg);
+    color: #fff;
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+}
+header nav .menus-card .menus-header .game-type{
+    color: var(--white-color);
+    font-family: var(--monstrate-font-500);
+    font-size: 1rem;
+    text-transform: lowercase;
+}
+header nav .menus-card .menus{
+    width: 100%;
+    padding-top: 14px;
+}
+header nav .menus-card .menus .menu{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(225, 224, 224, 0.13);
+   
+}
+header nav .menus-card .menus .menu:nth-child(1){
+    padding: 0px;
+}
+header nav .menus-card .menus .menu:nth-child(2){
+    padding: 0px;
+    margin-top: 10px;
+}
+header nav .menus-card .menus .menu .menu-name{
+    font-size: 0.9rem;
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+    color: var(--white-color);
+}
+header nav .menus-card .menus .menu .menu-name i{
+    margin-right: 8px;
+    font-size: 18px;
+}
+header nav .menus-card .menus .menu .menu-switch{
+    font-size: 0.9rem;
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+    color: var(--white-color);
+}
+/* Responseive code */
+@media screen and (min-width:420px)and (max-width:768px){
+    header {
+        width: 100%;
+        height: 60px;
+        background-color: #000000;
+    }
+    
+    header nav {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--dark-black);
+    }
+    
+    header nav .logo {
+        width: 60px;
+        height: 31px;
+    }
+    
+    header nav .logo img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    header nav ul {
+        display: flex;
+    }
+    
+    header nav ul li {
+        padding: 0px 10px;
+        cursor: pointer;
+    }
+    
+    header nav ul .user-profile {
+        display: flex;
+        align-items: center;
+    }
+    
+    header nav ul .user-profile .username {
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        text-transform: capitalize;
+        font-size: 0.9rem;
+    }
+    
+    header nav ul .user-profile i {
+        font-size: 16px;
+        padding: 1px;
+        color: var(--white-color);
+        border: 1px solid #ffffff;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    header nav ul .user-balance {
+        display: block;
+        margin-top: 10px;
+    }
+    
+    header nav ul .user-balance .balance, .balance-value {
+        color: var(--white-color);
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        text-transform: capitalize;
+        font-size: 0.9rem;
+    }
+    
+    header nav ul .user-balance i {
+        color: var(--white-color);
+    }
+    header nav ul .user-wallet i {
+        color: var(--white-color);
+        font-size: 20px;
+    }
+ 
+    header nav ul .menu-icon i {
+        color: var(--white-color);
+        font-size: 25px;
+    }
+
+
+    header nav .menus-card{
+        width: 90%;
+        height: 400px;
+        position: absolute;
+        padding: 10px;
+        top: 7%;
+        left: 10px;
+        background-color: var(--menus-card-bg-color);
+        border-radius: 20px;
+        z-index: 111;
+        transition: ease all 0.5s;
+    }
+    
+}
+
+
+/* Responseive code */
+@media screen and (max-width:410px){
+    header {
+        width: 100%;
+        height: 60px;
+        background-color: #000000;
+    }
+    
+    header nav {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--dark-black);
+    }
+    
+    header nav .logo {
+        width: 60px;
+        height: 31px;
+    }
+    
+    header nav .logo img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    header nav ul {
+        display: flex;
+    }
+    
+    header nav ul li {
+        padding: 0px 10px;
+        cursor: pointer;
+    }
+    
+    header nav ul .user-profile {
+        display: flex;
+        align-items: center;
+    }
+    
+    header nav ul .user-profile .username {
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        text-transform: capitalize;
+        font-size: 0.8rem;
+    }
+    
+    header nav ul .user-profile i {
+        font-size: 15px;
+        padding: 1px;
+        color: var(--white-color);
+        border: 1px solid #ffffff;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    header nav ul .user-balance {
+        display: block;
+        margin-top: 10px;
+    }
+    
+    header nav ul .user-balance .balance, .balance-value {
+        color: var(--white-color);
+        color: var(--white-color);
+        font-family: var(--monstrate-font-500);
+        text-transform: capitalize;
+        font-size: 0.8rem;
+    }
+    
+    header nav ul .user-balance i {
+        color: var(--white-color);
+    }
+    header nav ul .user-wallet i {
+        color: var(--white-color);
+        font-size: 20px;
+    }
+ 
+    header nav ul .menu-icon i {
+        color: var(--white-color);
+        font-size: 25px;
+    }
+
+
+    header nav .menus-card{
+        width: 90%;
+        height: 400px;
+        position: absolute;
+        padding: 10px;
+        top: 7%;
+        left: 10px;
+        background-color: var(--menus-card-bg-color);
+        border-radius: 20px;
+        z-index: 111;
+        transition: ease all 0.5s;
+    }
+    
+}

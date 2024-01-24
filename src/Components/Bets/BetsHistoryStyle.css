@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+:root {
+    --dark-black: #000000;
+    --white-color: #fff;
+    --monstrate-font-500: 'Montserrat', sans-serif;
+    --history-btn-color: #2C2D30;
+    --green-color: #28A909;
+    --auto-btn-color: red;
+    --controllers-bg-color: #1B1C1D;
+    --history-header-color: #2C2D30;
+    --bet-win-color:#41a71b;
+}
+
+
+.details-details {
+    width:100%;
+    height: 60vh;
+    margin: auto;
+}
+
+
+ .details-details .table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+   
+  
+}
+
+
+.details-details .table .table-header {
+    margin: auto;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 10px;
+    position: static;
+    background-color: var(--dark-black);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    z-index: 11;
+    margin-top: 10px;
+}
+
+.details-details .table .table-header .th {
+    color: #fff;
+    font-family: var(--monstrate-font-500);
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: capitalize;
+
+}
+
+.details-details .table .tbody {
+  
+    height:70vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.details-details .table .tbody::-webkit-scrollbar {
+    height: 0.2rem;
+    width: 0.5rem;
+}
+
+.details-details .table .tbody::-webkit-scrollbar-thumb {
+    background-color: var(--controllers-bg-color);
+    border-radius: 20px;
+}
+.details-details .table .tbody #placedBet-win .td{
+    color:var(--bet-win-color);
+}
+.details-details .table .tbody #placedBet-notwin .td{
+    color: var(--white-color);
+    
+}
+.details-details .table .tbody .tr {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    padding-top: 15px;
+    align-items: center;
+
+}
+
+.details-details .table .tbody .tr .td {
+    color: #fff;
+    font-family: var(--monstrate-font-500);
+    font-size: 0.8rem;
+    text-align: center;
+
+}
+
+.details-details .table .tbody .tr .username {
+    display: flex;
+    padding-left: 0px;
+    align-items: center;
+    font-size: 0.8rem;
+    justify-content: center;
+}
+
+.details-details .table .tbody .tr .username img {
+    width: 30px;
+    height: 30px;
+    clip-path: circle();
+    margin-right: 5px;
+}
+.details-details table{
+    width: 100%;
+} 
+
+ 
+.top-tabs {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+}
+
+.top-tabs button {
+    padding: 4px 26px 4px 26px;
+    margin: auto;
+    border-radius: 20px;
+    background-color: var(--history-btn-color);
+    color: var(--white-color);
+    border: none;
+    font-family: var(--monstrate-font-500);
+    text-transform: capitalize;
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-inline: 4px;
+}
+
+.top-tabs .active-tab {
+    background: var(--auto-btn-color);
+    color: var(--white-color);
+    transition: ease all 0.5s;
+}
+
+.bets-empty-message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    color: var(--white-color);
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    font-family: var(--monstrate-font-500);
+    font-weight: 400;
+    color: var(--auto-btn-color);
+} 
+
+

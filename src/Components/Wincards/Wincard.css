@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto&display=swap');
+
+:root {
+    --dark-black: #000000;
+    --white-color: #fff;
+    --monstrate-font-500: 'Montserrat', sans-serif;
+    --history-btn-color: #2C2D30;
+    --green-color: #28A909;
+    --auto-btn-color: red;
+    --controllers-bg-color: #1B1C1D;
+    --playbet-btn-border: #B2F2A3;
+    --robot-font: 'Roboto', sans-serif;
+    ;
+}
+
+
+
+.bet-win-card {
+    width: 100%;
+    height: 80px;
+    border: 1px solid var(--green-color);
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1111;
+    border-radius: 12px;
+    
+}
+#first-bet-win{
+    position: absolute;
+    left: 10px;
+    top: -20px;
+    display:block;
+
+}
+#second-bet-win{
+    position: absolute;
+    right: 0px;
+    top: -20px;
+    display:block;
+}
+.bet-win-card .card-wrapper {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.bet-win-card .card-wrapper .win-status {
+    font-family: var(--monstrate-font-500);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    color: var(--white-color);
+}
+
+.bet-win-card .card-wrapper .star1>i {
+    font-size: 26px;
+    color: var(--green-color);
+    position: absolute;
+    top: -7px;
+    left: 0px;
+}
+
+.bet-win-card .card-wrapper .star2>i {
+    font-size: 20px;
+    color: var(--green-color);
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.bet-win-card .card-wrapper .star3>i {
+    font-size: 20px;
+    color: var(--green-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.bet-win-card .card-wrapper .win-amount {
+    font-family: var(--monstrate-font-500);
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    color: var(--white-color);
+    padding-top: 5px;
+}
