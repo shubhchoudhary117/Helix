@@ -7,8 +7,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import TokenService from '../../Services/TokenService';
 import { useNavigate } from "react-router-dom";
 // API URI PREFIX
-let uriPrefix="http://localhost:8080/helix/user"
-// let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix/user"
+// let uriPrefix="http://localhost:8080/helix/user"
+let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix/user"
 const Navbar = ({ firstBetWin, secondBetWin, firstBetAccepted, secondBetAccepted }) => {
   const [hide, setHide] = useState(true);
   const [soundChecked, setSoundChecked] = useState(true);

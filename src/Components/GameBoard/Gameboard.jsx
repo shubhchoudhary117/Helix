@@ -23,8 +23,8 @@ const config = {
   }
 }
 // Server API URI PREFIX
-let uriPrefix = "http://localhost:8080/helix"
-// let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix"
+// let uriPrefix = "http://localhost:8080/helix"
+let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix"
 const Gameboard = () => {
   // create states for store data and update data 
 
