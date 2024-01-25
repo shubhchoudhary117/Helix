@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
 import TokenService from '../../../Services/TokenService';
+import ClipLoader from "react-spinners/ClipLoader"
 let defaultLoginDetails = {
     userid: "",
     password: ""
@@ -17,7 +18,7 @@ const config = {
 const uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix/auth"
 const Login = () => {
     let [loginDetails, setLoginDetails] = useState(defaultLoginDetails);
-
+    let [loginIsProcess,setLoginIsProcess]=useState(false);
     const navigate = useNavigate();
     // make notify functions for alert messages and error messages
     const notify = (message) => {
@@ -34,10 +35,12 @@ const Login = () => {
     // post the login details
     const postLoginRequest = async () => {
         if (loginDetails.userid != "" && loginDetails.password != "") {
+            setLoginIsProcess(true);
             await axios.post(`${uriPrefix}/user/login`, loginDetails, config)
                 .then((response) => {
                     console.log(response);
                     if (response.data.login) {
+                        setLoginIsProcess(false);
                         TokenService.setToken(response.data.Token)
                         navigate("/")
                     }
@@ -74,13 +77,18 @@ const Login = () => {
                         Helix
                     </div>
                     <div className="form-group" onChange={createLoginDetails}>
-                        <input value={loginDetails.userid} type="text" name='userid' />
+                        <input placeholder='userid' value={loginDetails.userid} type="text" name='userid' />
                     </div>
                     <div className="form-group">
-                        <input value={loginDetails.password} type="text" name='password' onChange={createLoginDetails} />
+                        <input placeholder='password' value={loginDetails.password} type="text" name='password' onChange={createLoginDetails} />
                     </div>
                     <div className="login-button">
-                        <button onClick={postLoginRequest}>login</button>
+                        <button onClick={postLoginRequest}>
+                            {
+                                loginIsProcess?<ClipLoader size={23} color='#fff' />
+                                :"login"
+                            }
+                            </button>
                     </div>
 
                 </div>

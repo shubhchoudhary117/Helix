@@ -98,6 +98,7 @@ header nav ul .user-wallet i {
 header nav ul .menu-icon{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 header nav ul .menu-icon i {
     font-size: 25px;
@@ -163,6 +164,7 @@ header nav .menus-card .menus .menu{
     margin-top: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(225, 224, 224, 0.13);
+    cursor: pointer;
    
 }
 header nav .menus-card .menus .menu:nth-child(1){

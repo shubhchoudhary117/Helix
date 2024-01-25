@@ -57,6 +57,12 @@ const Navbar = ({ firstBetWin, secondBetWin, firstBetAccepted, secondBetAccepted
       isReady:musicChecked
     });
   },[musicChecked,user])
+
+  // on Logout
+  const doLogout=()=>{
+    TokenService.removeToken();
+    navigate("/helix/login")
+  }
   
   return <>
     <header>
@@ -95,6 +101,9 @@ const Navbar = ({ firstBetWin, secondBetWin, firstBetAccepted, secondBetAccepted
             </div>
             <div className="menu">
               <div className="menu-name"><i class="uil uil-compact-disc"></i>game limits</div>
+            </div>
+            <div className="menu">
+              <div className="menu-name" onClick={doLogout}><i class="uil uil-sign-out-alt"></i>Logout</div>
             </div>
 
           </div>

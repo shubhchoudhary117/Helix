@@ -21,7 +21,7 @@
 
 .login-section {
     width: 100vw;
-    height: 99vh;
+    height: 100vh;
 }
 
 .login-section  .Toaster {
@@ -78,8 +78,15 @@
     font-size: 1rem;
     font-family: var(--poppins-font);
     border: 1.2px solid var(--login-btn-color);
+    color: #000000;
 }
-
+.login-section .login-bg-nanner .form .form-group input::placeholder{
+    text-transform: capitalize;
+    font-family: var(--robot-font);
+    font-size: 1rem;
+    color:#764ba297;
+    font-weight: 530;
+}
 .login-section .login-bg-nanner .form .login-button{
     height: 45px;
     width: 50%;
