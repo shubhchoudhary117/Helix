@@ -43,7 +43,7 @@ const Gameboard = () => {
   const firstBetAutoCollectNumbers = ["1.10", "1.20", "1.30", "1.40", "1.50", "1.60", "1.70",
     "1.80", "1.90", "200", "300", "400", "500", "600", "700", "800", "900", "1000"];
 
-    const secondBetAutoCollectNumbers = ["1.10", "1.20", "1.30", "1.40", "1.50", "1.60", "1.70",
+  const secondBetAutoCollectNumbers = ["1.10", "1.20", "1.30", "1.40", "1.50", "1.60", "1.70",
     "1.80", "1.90", "200", "300", "400", "500", "600", "700", "800", "900", "1000"];
   // this states is releted to place bet and other bet related functionality
   var [firstbettingAmount, setFirstBettingAmount] = useState(10);
@@ -86,12 +86,12 @@ const Gameboard = () => {
   // this audio ref is point my audio tag
   const firstBetAudioRef = useRef();
   const secondBetAudioRef = useRef();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   // get current Authenticate user from server
   useEffect(() => {
     const getCurrentUser = async () => {
-      await axios.get(`${uriPrefix}/user/get-user`,{headers:{authorization:TokenService.getToken()}})
+      await axios.get(`${uriPrefix}/user/get-user`, { headers: { authorization: TokenService.getToken() } })
         .then((response) => {
           if (response.data.result) {
             setUser(response.data.user);
@@ -102,10 +102,10 @@ const Gameboard = () => {
         })
         .catch((error) => {
           console.log(error)
-          if(error.response.data.badcredintals && !error.response.data.authorization){
+          if (error.response.data.badcredintals && !error.response.data.authorization) {
             navigate("/helix/login")
           }
-          if(error.response.data.internalServerError){
+          if (error.response.data.internalServerError) {
             notify("internal server error")
           }
         })
@@ -134,10 +134,10 @@ const Gameboard = () => {
 
   // set the unity game options
   var { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
-    loaderUrl: process.env.PUBLIC_URL + "/Build/HeliX.loader.js",
-    dataUrl: process.env.PUBLIC_URL + "/Build/HeliX.data",
-    frameworkUrl: process.env.PUBLIC_URL + "/Build/HeliX.framework.js",
-    codeUrl: process.env.PUBLIC_URL + "/Build/HeliX.wasm",
+    loaderUrl: process.env.PUBLIC_URL + "/Build/HeliXBuild.loader.js",
+    dataUrl: process.env.PUBLIC_URL + "/Build/HeliXBuild.data",
+    frameworkUrl: process.env.PUBLIC_URL + "/Build/HeliXBuild.framework.js",
+    codeUrl: process.env.PUBLIC_URL + "/Build/HeliXBuild.wasm",
   });
   // call the add event listner function on added any listner in helix build
   useEffect(() => {
@@ -797,7 +797,7 @@ current bet number if is true then we are call the win function and pass win amo
     setFirstBetAutoCollectBetNumber(nextValue)
 
   }
- // back a auto collect number from autocollect bet number array
+  // back a auto collect number from autocollect bet number array
   const onDecreaseSecondAutoCollectBetNumber = () => {
     let currentIndex = secondBetAutoCollectNumbers.indexOf(secondBetAutoCollectBetNumber);
     let newIndex = currentIndex - 1;
@@ -806,7 +806,7 @@ current bet number if is true then we are call the win function and pass win amo
 
   }
 
-// enable the input field when coponent is loaded
+  // enable the input field when coponent is loaded
   const inputRef = useRef();
   useEffect(() => {
     // Focus on an input field using a React ref after Unity WebGL is loaded
