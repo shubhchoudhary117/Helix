@@ -14,7 +14,7 @@ const config = {
     }
 }
 
-const uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix"
+const uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix/auth"
 const Login = () => {
     let [loginDetails, setLoginDetails] = useState(defaultLoginDetails);
 
@@ -34,7 +34,7 @@ const Login = () => {
     // post the login details
     const postLoginRequest = async () => {
         if (loginDetails.userid != "" && loginDetails.password != "") {
-            await axios.post(`${uriPrefix}/auth/login`, loginDetails, config)
+            await axios.post(`${uriPrefix}/user/login`, loginDetails, config)
                 .then((response) => {
                     console.log(response);
                     if (response.data.login) {
