@@ -10,13 +10,15 @@ let defaultLoginDetails = {
 }
 const config = {
     headers: {
-      'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
     }
-  }
+}
+
+const uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix"
 const Login = () => {
     let [loginDetails, setLoginDetails] = useState(defaultLoginDetails);
 
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     // make notify functions for alert messages and error messages
     const notify = (message) => {
         toast.error(message);
@@ -30,34 +32,34 @@ const Login = () => {
     }
 
     // post the login details
-    const postLoginRequest =async () => {
+    const postLoginRequest = async () => {
         if (loginDetails.userid != "" && loginDetails.password != "") {
-            await axios.post(`http://localhost:8080/helix/auth/user/login`,loginDetails,config)
-            .then((response)=>{
-                console.log(response);
-                if(response.data.login){
-                    TokenService.setToken(response.data.Token)
-                    navigate("/")
-                }
-                if(response.data.userIdInvalid){
-                    notify("userid is invalid")
-                }
-                if(response.data.passwordInvalid){
-                    notify("password is invalid")
-                }
-                if(response.data.internalServerError){
-                    notify("internal server error")
-                }
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+            await axios.post(`${uriPrefix}/auth/login`, loginDetails, config)
+                .then((response) => {
+                    console.log(response);
+                    if (response.data.login) {
+                        TokenService.setToken(response.data.Token)
+                        navigate("/")
+                    }
+                    if (response.data.userIdInvalid) {
+                        notify("userid is invalid")
+                    }
+                    if (response.data.passwordInvalid) {
+                        notify("password is invalid")
+                    }
+                    if (response.data.internalServerError) {
+                        notify("internal server error")
+                    }
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
         } else {
             if (loginDetails.userid == "" && loginDetails.password == "") {
                 notify("bad credentials")
             } else {
-                if (loginDetails.userid === "") { notify("userid is invalid")}
-                if (loginDetails.password === "") {notify("password is invalid") }
+                if (loginDetails.userid === "") { notify("userid is invalid") }
+                if (loginDetails.password === "") { notify("password is invalid") }
             }
         }
     }
