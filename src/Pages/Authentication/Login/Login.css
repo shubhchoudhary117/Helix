@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+:root {
+    --green-btn-color: #65b928;
+    --white: #fff;
+    --monstrate-font-500: 'Montserrat', sans-serif;
+    --robot-font: 'Roboto', sans-serif;
+    --poppins-font: 'Poppins', sans-serif;
+    --disabled-bg-color: #1b1c1dbb;
+    --lilita-font: 'Lilita One', sans-serif;
+    --login-btn-color:#764ba2;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.login-section {
+    width: 100vw;
+    height: 99vh;
+}
+
+.login-section  .Toaster {
+    border: 1px solid var(--login-btn-color);
+    padding: 16px;
+    color: var(--white-color);
+    background-color: var(--login-btn-color);
+    text-transform: capitalize;
+    font-family: var(--monstrate-font-500);
+}
+
+.login-section .login-bg-nanner {
+    width: 100vw;
+    height: 99.3vh;
+    box-sizing: border-box;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.login-section .login-bg-nanner .form {
+    width: 330px;
+    height: 300px;
+    position: relative;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    border-radius: 20px;
+}
+.login-section .login-bg-nanner .form .heading{
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: var(--lilita-font);
+    padding-top: 14px;
+    color: var(--login-btn-color);
+}
+
+.login-section .login-bg-nanner .form .form-group{
+    width: 80%;
+    height: 45px;
+    margin: auto;
+    margin-top: 15px;
+}
+.login-section .login-bg-nanner .form .form-group input{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    padding-left: 12px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: var(--poppins-font);
+    border: 1.2px solid var(--login-btn-color);
+}
+
+.login-section .login-bg-nanner .form .login-button{
+    height: 45px;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+.login-section .login-bg-nanner .form .login-button button{
+    width: 100%;
+    height: 100%;
+    background-color: var(--login-btn-color);
+    border: none;
+    border-radius: 20px;
+    font-family: var(--lilita-font);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: var(--white);
+    cursor: pointer;
+transition: 0.5s;
+}
+
+.login-section .login-bg-nanner .form .login-button button:hover{
+    background-color: #764ba2dd;
+}
+
+@media screen and (max-width:768px){
+    .login-section {
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .login-section  .Toaster {
+        margin-top: 20px;
+    }
+    
+    .login-section .login-bg-nanner {
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .login-section .login-bg-nanner .form {
+        width: 90%;
+        position: relative;
+        background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        border-radius: 20px;
+    }
+    .login-section .login-bg-nanner .form .heading{
+        width: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: var(--lilita-font);
+        padding-top: 14px;
+        color: var(--login-btn-color);
+    }
+    
+    .login-section .login-bg-nanner .form .form-group{
+        width: 85%;
+        height: 45px;
+        margin: auto;
+        margin-top: 15px;
+    }
+    .login-section .login-bg-nanner .form .form-group input{
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        border: none;
+        outline: none;
+        padding-left: 12px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-family: var(--poppins-font);
+        border: 1.2px solid var(--login-btn-color);
+    }
+    
+    .login-section .login-bg-nanner .form .login-button{
+        height: 45px;
+        width: 50%;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .login-section .login-bg-nanner .form .login-button button{
+        width: 100%;
+        height: 100%;
+        background-color: var(--login-btn-color);
+        border: none;
+        border-radius: 20px;
+        font-family: var(--lilita-font);
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        color: var(--white);
+        cursor: pointer;
+    transition: 0.5s;
+    }
+    
+    .login-section .login-bg-nanner .form .login-button button:hover{
+        background-color: #764ba2dd;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import "./Gameboard.css"
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { Suspense } from 'react';
@@ -6,8 +7,10 @@ import toast, { Toaster } from 'react-hot-toast';
 import Wincard from '../Wincards/Wincard';
 import axios from 'axios';
 import Navbar from '../Navigation/Navbar';
+
 import CustomSwitch from '../Coustom/Switch/CustomSwitch';
 import ClipLoader from "react-spinners/ClipLoader"
+import TokenService from '../../Services/TokenService';
 // lazy loading
 var UserBets = React.lazy(() => import("../Bets/UserBets"))
 var AllBets = React.lazy(() => import('../Bets/AllBets'))
@@ -20,8 +23,8 @@ const config = {
   }
 }
 // Server API URI PREFIX
-// let uriPrefix = "http://localhost:8080/helix"
-let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix"
+let uriPrefix = "http://localhost:8080/helix"
+// let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix"
 const Gameboard = () => {
   // create states for store data and update data 
 
@@ -83,12 +86,12 @@ const Gameboard = () => {
   // this audio ref is point my audio tag
   const firstBetAudioRef = useRef();
   const secondBetAudioRef = useRef();
-
+  const navigate=useNavigate();
 
   // get current Authenticate user from server
   useEffect(() => {
     const getCurrentUser = async () => {
-      await axios.get(`${uriPrefix}/user/get-user`)
+      await axios.get(`${uriPrefix}/user/get-user`,{headers:{authorization:TokenService.getToken()}})
         .then((response) => {
           if (response.data.result) {
             setUser(response.data.user);
@@ -98,8 +101,13 @@ const Gameboard = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
-          notify("internal server error")
+          console.log(error)
+          if(error.response.data.badcredintals && !error.response.data.authorization){
+            navigate("/helix/login")
+          }
+          if(error.response.data.internalServerError){
+            notify("internal server error")
+          }
         })
     }
     getCurrentUser();

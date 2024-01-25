@@ -4,9 +4,11 @@ import Switch from '@mui/material/Switch';
 import axios from 'axios';
 import { useGlobalAudioPlayer } from 'react-use-audio-player';
 import toast, { Toaster } from 'react-hot-toast';
+import TokenService from '../../Services/TokenService';
+import { useNavigate } from "react-router-dom";
 // API URI PREFIX
-// let uriPrefix="http://localhost:8080/helix/user"
-let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix/user"
+let uriPrefix="http://localhost:8080/helix/user"
+// let uriPrefix = "https://bui8h16bv0.execute-api.ap-south-1.amazonaws.com/api/helix/user"
 const Navbar = ({ firstBetWin, secondBetWin, firstBetAccepted, secondBetAccepted }) => {
   const [hide, setHide] = useState(true);
   const [soundChecked, setSoundChecked] = useState(true);
@@ -14,6 +16,7 @@ const Navbar = ({ firstBetWin, secondBetWin, firstBetAccepted, secondBetAccepted
   const [user, setUser] = useState(null);
   const { load } = useGlobalAudioPlayer();
   const username="Shubh@123"
+  const navigate=useNavigate();
   // make notify functions for alert messages and error messages
   const notify = (message) => {
     toast.error(message);
@@ -24,7 +27,7 @@ const Navbar = ({ firstBetWin, secondBetWin, firstBetAccepted, secondBetAccepted
   useEffect(() => {
 
     const getCurrentUser = async () => {
-      await axios.get(`${uriPrefix}/get-user`)
+      await axios.get(`${uriPrefix}/get-user`,{headers:{authorization:TokenService.getToken()}})
         .then((response) => {
           console.log(response)
           if (response.data.result) {
@@ -35,8 +38,13 @@ const Navbar = ({ firstBetWin, secondBetWin, firstBetAccepted, secondBetAccepted
           }
         })
         .catch((error) => {
-          console.log(error);
-          notify("internal server error")
+          console.log(error)
+          if(error.response.data.badcredintals && !error.response.data.authorization){
+            navigate("/helix/login")
+          }
+          if(error.response.data.internalServerError){
+            notify("internal server error")
+          }
         })
     }
     getCurrentUser();

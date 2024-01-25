@@ -6,6 +6,7 @@ import Navbar from "./Components/Navigation/Navbar"
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Homepage from './Pages/Home/Homepage'
 import "./App.css"
+import Login from './Pages/Authentication/Login/Login';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Dashboard />}>
             <Route path='/' element={<Homepage />} />
+            <Route path="helix/login" element={<Login/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
